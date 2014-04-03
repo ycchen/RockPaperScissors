@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RockPaperScissors</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= nav_bar brand: "RockPaperScissors" do %>
+    <%= menu_group do %>
+        <%= menu_item "Home", root_path %>
+        <%= menu_item "About", '#about', data: {toggle: 'modal' } %>
+        
+    <% end %>
+
+  <% end %>
+
+  <div class="container">
+    <%= bootstrap_flash %>
+  </div>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+
+  <%= modal_dialog :id => "about",
+    :header => { show_close: true, dismiss: 'modal', title: 'About Rock-Paper-Scissors Game' },
+    :body   => 'Create a web-based application that allows a user to play rock-paper-scissors.',
+    :footer => content_tag(:button, 'Close', class: 'btn btn-primary', data: { dismiss: 'modal'}, aria: { hidden: true }) %>
+
+
+</body>
+</html>

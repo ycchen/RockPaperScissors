@@ -1,0 +1,15 @@
+<h4>Play Rock Paper Scissors</h4>
+
+<%= form_tag '/throw' do |f| %>
+	<div class="form-inputs">
+		<div class="field">
+			<%= label_tag :sign %>
+			<%= select_tag(:sign, options_for_select($SIGN.map{|s| [s,s]})) %>
+		</div>
+
+	</div>
+	<div class="form-actions">
+		<%= submit_tag 'Throw', class: 'btn btn-primary' %>
+	</div>
+
+<% end %>

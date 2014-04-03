@@ -1,0 +1,78 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
+
+## To run this simple game download and bundle install 
+$ bundle install
+$ rails s
+
+## Go to http://localhost:3000
+
+## To test
+
+$ guard
+
+
+
+
+## Generate RockPaperScissors without Test
+$ rails new RockPaperScissors -T
+
+## Added Gems for test and development
+group :test, :development do
+	gem 'rspec-rails'
+	gem 'capybara'
+	gem 'guard-rspec'
+end
+
+gem 'twitter-bootstrap-rails'
+
+## run the bootstrape generator, don't want to use less
+$ rails g bootstrap:install static
+
+ insert  app/assets/javascripts/application.js
+ create  app/assets/javascripts/bootstrap.js.coffee
+ create  app/assets/stylesheets/bootstrap_and_overrides.css
+ create  config/locales/en.bootstrap.yml
+   gsub  app/assets/stylesheets/application.css
+   gsub  app/assets/stylesheets/application.css
+
+## Install rspec
+$ rails g rspec:install
+
+## Intitalize Guard to auto run rspec tests
+$ guard init rspec
+
+
+# Create home controllers
+$ rails g controller home index
+
+# set root to home#index
+
+## Generated integration_test
+$ rails g integration_test home
